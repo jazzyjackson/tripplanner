@@ -1,12 +1,12 @@
-var template = require('nunjucks');
+var nunjucks = require('nunjucks');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var Express = require('express');
 var app = new Express();
 
-app.use()
+// app.use()
 
-template.configure('views', {noCache: true});
+nunjucks.configure('views', {noCache: true});
 app.set('view enginer', 'html');
 app.engine('html', nunjucks.render);
 
@@ -15,7 +15,7 @@ app.use(bodyParser.json());app.use(morgan('dev'));
 
 app.use(morgan('dev'));
 
-app.use(express.static('public'));
+app.use(Express.static('public'));
 
 app.get('/', function(req,res,next) {
   console.log("Ya server is RUNNIN");
