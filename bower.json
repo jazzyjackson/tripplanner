@@ -1,0 +1,23 @@
+{
+  "name": "tripplanner",
+  "description": "plan a vacation",
+  "main": "index.js",
+  "authors": [
+    "1609"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "fun",
+    "wow",
+    "javascript"
+  ],
+  "homepage": "https://github.com/jazzyjackson/tripplanner",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
