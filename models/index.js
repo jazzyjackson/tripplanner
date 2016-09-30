@@ -1,7 +1,7 @@
 var Sequelize = require('Sequelize');
-var db = new Sequelize('postgres://localhost:5432/tripplanner');
+var db = new Sequelize('postgres://localhost:5432/tripplanner', {logging: false});
 
-var Place = db.define('Place', {
+var Place = db.define('place', {
   address: {
     type: Sequelize.STRING
   },
@@ -22,19 +22,19 @@ var Place = db.define('Place', {
 
 });
 
-var Hotel = db.define('Hotel', {
+var Hotel = db.define('hotel', {
   name: {
     type: Sequelize.STRING
   },
   num_stars: {
-    type: Sequelize.INT
+    type: Sequelize.INTEGER
   },
   amenities: {
     type: Sequelize.STRING
   }
 });
 
-var Activity = db.define('Activity', {
+var Activity = db.define('activity', {
   name: {
     type: Sequelize.STRING
   },
@@ -43,7 +43,7 @@ var Activity = db.define('Activity', {
   }
 });
 
-var Restaurant = db.define('Restaurant', {
+var Restaurant = db.define('restaurant', {
   name: {
     type: Sequelize.STRING
   },
@@ -51,7 +51,7 @@ var Restaurant = db.define('Restaurant', {
     type: Sequelize.STRING
   },
   price: {
-    type: Sequelize.INT
+    type: Sequelize.INTEGER
   }
 });
 
@@ -60,6 +60,7 @@ Restaurant.belongsTo(Place);
 Activity.belongsTo(Place);
 
 module.exports = {
+  db: db,
   Place: Place,
   Hotel: Hotel,
   Activity: Activity,
